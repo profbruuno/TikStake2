@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikStake - Secure Crypto Time-Locking</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>TikStake</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#assets">Assets</a></li>
+                        <li><a href="#" id="faqLink">FAQ</a></li>
+                        <li><a href="#" id="whitepaperLink">White Paper</a></li>
+                        <li><a href="#" id="contactUs">Contact Us</a></li>
+                    </ul>
+                    <div class="user-area-btn" id="userAreaBtn">
+                        <i class="fas fa-user-circle"></i> User Area
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Secure Your Crypto Future with TikStake</h1>
+            <p>Lock your cryptocurrencies for 6 months to 20 years with our multi-signature cold storage. Prevent impulsive selling and build long-term wealth with peace of mind.</p>
+            <button class="cta-button" id="heroCta">Start Locking Now</button>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title">Our Achievements</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$142M+</div>
+                    <div class="stat-label">Assets Secured</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12,489</div>
+                    <div class="stat-label">Active Locks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Security Breaches</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98.7%</div>
+                    <div class="stat-label">Customer Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose TikStake?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                    <h3>Cold Storage Security</h3>
+                    <p>Your assets are stored in multi-signature cold wallets with military-grade encryption.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+                    <h3>Flexible Lock Periods</h3>
+                    <p>Choose lock periods from 6 months to 20 years to match your investment goals.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-user-shield" aria-hidden="true"></i></div>
+                    <h3>Next of Kin Protection</h3>
+                    <p>Designate beneficiaries for emergency access through a secure process.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-hand-holding-usd" aria-hidden="true"></i></div>
+                    <h3>Transparent Fees</h3>
+                    <p>No hidden costs with a clear fee structure based on locked value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assets Section -->
+    <section class="assets" id="assets">
+        <div class="container">
+            <h2 class="section-title">Select Asset to Lock</h2>
+            <div class="assets-grid">
+                <div class="asset-card" data-asset="bitcoin" data-asset-id="bitcoin">
+                    <div class="asset-icon" style="color: #F7931A;"><i class="fab fa-bitcoin" aria-hidden="true"></i></div>
+                    <h3>Bitcoin (BTC)</h3>
+                    <div class="asset-price" id="bitcoin-price"><div class="price-loading">Loading...</div></div>
+                    <p>The original cryptocurrency with widespread adoption.</p>
+                    <button class="cta-button">Lock Bitcoin</button>
+                </div>
+                <div class="asset-card" data-asset="ethereum" data-asset-id="ethereum">
+                    <div class="asset-icon" style="color: #627EEA;"><i class="fab fa-ethereum" aria-hidden="true"></i></div>
+                    <h3>Ethereum (ETH)</h3>
+                    <div class="asset-price" id="ethereum-price"><div class="price-loading">Loading...</div></div>
+                    <p>Leading smart contract platform with a vibrant ecosystem.</p>
+                    <button class="cta-button">Lock Ethereum</button>
+                </div>
+                <div class="asset-card" data-asset="solana" data-asset-id="solana">
+                    <div class="asset-icon" style="color: #00FFA3;"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                    <h3>Solana (SOL)</h3>
+                    <div class="asset-price" id="solana-price"><div class="price-loading">Loading...</div></div>
+                    <p>High-performance blockchain with fast transactions.</p>
+                    <button class="cta-button">Lock Solana</button>
+                </div>
+                <div class="asset-card" data-asset="bnb" data-asset-id="binancecoin">
+                    <div class="asset-icon" style="color: #F0B90B;"><i class="fas fa-coins" aria-hidden="true"></i></div>
+                    <h3>BNB</h3>
+                    <div class="asset-price" id="binancecoin-price"><div class="price-loading">Loading...</div></div>
+                    <p>Powers the BNB Chain ecosystem with various utilities.</p>
+                    <button class="cta-button">Lock BNB</button>
+                </div>
+                <div class="asset-card" data-asset="cardano" data-asset-id="cardano">
+                    <div class="asset-icon" style="color: #0033AD;"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                    <h3>Cardano (ADA)</h3>
+                    <div class="asset-price" id="cardano-price"><div class="price-loading">Loading...</div></div>
+                    <p>Research-driven blockchain focused on security.</p>
+                    <button class="cta-button">Lock Cardano</button>
+                </div>
+                <div class="asset-card" data-asset="polkadot" data-asset-id="polkadot">
+                    <div class="asset-icon" style="color: #E6007A;"><i class="fas fa-circle-nodes" aria-hidden="true"></i></div>
+                    <h3>Polkadot (DOT)</h3>
+                    <div class="asset-price" id="polkadot-price"><div class="price-loading">Loading...</div></div>
+                    <p>Multi-chain platform for blockchain interoperability.</p>
+                    <button class="cta-button">Lock Polkadot</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Area Modal -->
+    <div class="modal" id="userModal" role="dialog" aria-labelledby="userModalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" id="userModalClose" aria-label="Close modal">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="modal-header">
+                <h2 id="userModalTitle">User Area</h2>
+                <p>Access your locked assets and account details</p>
+            </div>
+            <div class="login-form" id="loginForm">
+                <div class="security-notice">
+                    <h4><i class="fas fa-info-circle" aria-hidden="true"></i> Secure Access</h4>
+                    <p>Enter your credentials to access your dashboard.</p>
+                </div>
+                <form id="userLoginForm">
+                    <div class="form-group" id="emailGroup">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                        <div class="form-error" id="emailError">Please enter a valid email</div>
+                    </div>
+                    <div class="form-group" id="passwordGroup">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                        <div class="form-error" id="passwordError">Please enter your password</div>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn-cancel">Cancel</button>
+                        <button type="submit" class="btn-submit">Login</button>
+                    </div>
+                </form>
+            </div>
+            <div class="user-dashboard" id="userDashboard">
+                <div class="user-info">
+                    <div>
+                        <div class="user-id">User ID: <span id="userIdDisplay">TS-0000-0000-0000</span></div>
+                        <div>Email: <span id="userEmailDisplay">user@example.com</span></div>
+                    </div>
+                    <button class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+                <div class="dashboard-stats">
+                    <div class="dashboard-stat">
+                        <h3>Total Value Locked</h3>
+                        <div class="value">$0.00</div>
+                    </div>
+                    <div class="dashboard-stat">
+                        <h3>Total Gain/Loss</h3>
+                        <div class="value">$0.00</div>
+                    </div>
+                    <div class="dashboard-stat">
+                        <h3>Active Locks</h3>
+                        <div class="value">0</div>
+                    </div>
+                </div>
+                <div class="locked-assets">
+                    <h3>Your Locked Assets</h3>
+                    <div class="asset-list" id="assetList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lock Modal -->
+    <div class="modal" id="lockModal" role="dialog" aria-labelledby="modalAssetName" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="modal-header">
+                <h2 id="modalAssetName">Lock Asset</h2>
+                <p>Secure your assets for the long term</p>
+            </div>
+            <div class="security-notice">
+                <h4><i class="fas fa-info-circle" aria-hidden="true"></i> Security Notice</h4>
+                <p>Wallet generation is for demo purposes only. Use secure server-side methods in production.</p>
+            </div>
+            <form id="lockForm">
+                <div class="form-group">
+                    <button type="button" class="generate-wallet" id="generateWallet">
+                        <i class="fas fa-wallet" aria-hidden="true"></i> Generate Wallet Address
+                    </button>
+                    <div class="wallet-address" id="walletAddressDisplay">
+                        Your wallet address will appear here
+                        <button class="copy-address" id="copyAddress" aria-label="Copy address to clipboard">
+                            <i class="fas fa-copy" aria-hidden="true"></i> Copy
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group" id="amountGroup">
+                    <label for="amount">Amount to Lock</label>
+                    <input type="number" id="amount" placeholder="Enter amount" required disabled step="0.00000001" min="0.00000001">
+                    <div class="form-error" id="amountError">Please enter a valid amount</div>
+                </div>
+                <div class="form-group">
+                    <label for="lockDuration">Lock Duration</label>
+                    <div class="duration-options">
+                        <button type="button" class="duration-btn" data-months="6">6 Months</button>
+                        <button type="button" class="duration-btn active" data-months="12">1 Year</button>
+                        <button type="button" class="duration-btn" data-months="24">2 Years</button>
+                        <button type="button" class="duration-btn" data-months="60">5 Years</button>
+                        <button type="button" class="duration-btn" data-months="120">10 Years</button>
+                        <button type="button" class="duration-btn" data-months="240">20 Years</button>
+                    </div>
+                </div>
+                <div class="form-group" id="emailGroupLock">
+                    <label for="emailLock">Email Address</label>
+                    <input type="email" id="emailLock" placeholder="Enter your email" required disabled>
+                    <div class="form-error" id="emailErrorLock">Please enter a valid email</div>
+                </div>
+                <div class="form-group" id="nextOfKinGroup">
+                    <label for="nextOfKin">Next of Kin Email (Optional)</label>
+                    <input type="email" id="nextOfKin" placeholder="Enter next of kin email" disabled>
+                    <div class="form-error" id="nextOfKinError">Please enter a valid email</div>
+                </div>
+                <div class="form-group" id="transactionHashGroup">
+                    <label for="transactionHash">Transaction Hash</label>
+                    <input type="text" id="transactionHash" placeholder="Enter transaction hash" required disabled pattern="^0x[a-fA-F0-9]{64}$">
+                    <div class="form-error" id="transactionHashError">Please enter a valid transaction hash</div>
+                </div>
+                <div class="form-group">
+                    <label for="proof">Upload Proof (Screenshot)</label>
+                    <input type="file" id="proof" accept="image/*" disabled>
+                </div>
+                <div class="fee-notification" id="feeNotification">
+                    <h4><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Locking Fee</h4>
+                    <div class="fee-amount" id="feeAmount">0.0000</div>
+                    <div class="fee-explanation" id="feeExplanation">Fee calculated based on market value</div>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-submit" disabled>Lock Assets</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- White Paper Modal -->
+    <div class="whitepaper-modal" id="whitepaperModal" role="dialog" aria-labelledby="whitepaperTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="whitepaperClose" aria-label="Close white paper">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="whitepaperTitle"><i class="fas fa-file-alt"></i> TikStake White Paper</h2>
+                <p>Secure Crypto Time-Locking Protocol</p>
+            </div>
+            <div class="whitepaper-body">
+                <p>TikStake is founded by anonymous trustees with experience in financial management from educational institutions. This background drives our mission to safeguard crypto wealth.</p>
+                <p>Our team combines expertise in cryptography, blockchain, and security to prevent impulsive selling, leveraging multi-signature cold storage and manual withdrawal reviews.</p>
+                <p>Fees are transparent: 0.2% ($0-1,000), 0.1% ($1,001-100,000), 0.005% ($100,001-1,000,000), 0.001% (over $1,000,000), collected in the native cryptocurrency.</p>
+                <p>Our goal is to empower long-term wealth building through disciplined investment strategies.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Modal -->
+    <div class="whitepaper-modal" id="blogModal" role="dialog" aria-labelledby="blogTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="blogClose" aria-label="Close blog">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="blogTitle"><i class="fas fa-book"></i> Blog</h2>
+                <p>Your go-to destination for crypto insights.</p>
+            </div>
+            <div class="whitepaper-body">
+                <p>Welcome to the TikStake Blog, your go-to destination for deep dives into crypto security, legacy planning, and platform updates. Each week, our team publishes expert insights designed to help you safeguard digital assets and understand emerging trends in decentralized finance.</p>
+                <div class="blog-categories">
+                    <h3>Featured Categories</h3>
+                    <ul>
+                        <li><strong>Security Best Practices</strong><br>Actionable guides on protecting private keys, preventing phishing attacks, and securing multi-signature wallets.</li>
+                        <li><strong>Legacy Planning</strong><br>Strategies for ensuring your crypto holdings pass to loved ones, covering legal frameworks, trustee selection, and proof workflows.</li>
+                        <li><strong>Platform News</strong><br>Announcements about new features, supported tokens, and partnerships that expand TikStake’s vault ecosystem.</li>
+                        <li><strong>Community Spotlights</strong><br>Interviews and case studies highlighting real-world use cases, user experiences, and lessons learned from TikStake customers.</li>
+                    </ul>
+                </div>
+                <div class="stay-updated">
+                    <h3>How to Stay Updated</h3>
+                    <ol>
+                        <li>Subscribe to our newsletter at the bottom of any blog page</li>
+                        <li>Follow us on Twitter and LinkedIn for real-time alerts</li>
+                        <li>Join our Discord community to ask questions and share feedback with fellow users and the TikStake team</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Modal -->
+    <div class="whitepaper-modal" id="faqModal" role="dialog" aria-labelledby="faqTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="faqClose" aria-label="Close FAQ">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="faqTitle"><i class="fas fa-question-circle"></i> FAQ</h2>
+                <p>Answers to your questions about TikStake.</p>
+            </div>
+            <div class="whitepaper-body">
+                <div class="faq-item">
+                    <h3>What is TikStake?</h3>
+                    <p>TikStake is a crypto vault service that locks digital assets until a specified unlock date or proof-of-life deadline, ensuring heirs access holdings only when you’re ready or if you become unresponsive.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Which assets can I lock?</h3>
+                    <p>We support major blockchains including Ethereum, Binance Smart Chain, and Polygon. Compatible tokens include ETH, USDC, BNB, MATIC, and any ERC-20 or BEP-20 asset added to our registry.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I set an unlock date?</h3>
+                    <p>During vault creation you choose an absolute date or a recurring proof-of-life interval. If you miss a required proof, your next-of-kin can activate the vault once the grace period expires.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What proofs are accepted?</h3>
+                    <p>Upload a selfie holding today’s newspaper (e.g., August 24, 2025), a timestamped video message, or any other proof that clearly shows the current date. All uploads are encrypted and stored off-chain.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I change the unlock date or beneficiaries?</h3>
+                    <p>Yes. As long as the vault remains locked, you can log in to modify your proof schedule and add or remove next-of-kin addresses at any time.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a refund or cancellation policy?</h3>
+                    <p>Vault fees are non-refundable once the lock period begins. You may cancel or withdraw assets up until your first proof deadline without penalty.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tutorials Modal -->
+    <div class="whitepaper-modal" id="tutorialsModal" role="dialog" aria-labelledby="tutorialsTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="tutorialsClose" aria-label="Close tutorials">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="tutorialsTitle"><i class="fas fa-graduation-cap"></i> Tutorials</h2>
+                <p>Step-by-step guides to using TikStake.</p>
+            </div>
+            <div class="whitepaper-body">
+                <div class="tutorial-item">
+                    <h3>1. Locking Assets</h3>
+                    <ul>
+                        <li>Select the asset you want to lock and click its “Lock Assets” button</li>
+                        <li>The platform instantly generates a unique deposit wallet address</li>
+                        <li>Send your tokens to that address</li>
+                        <li>The wallet address you use to send funds will be the one authorized for future withdrawals</li>
+                    </ul>
+                </div>
+                <div class="tutorial-item">
+                    <h3>2. Submitting Proof of Life</h3>
+                    <ul>
+                        <li>Before each proof deadline, open your dashboard and choose “Submit Proof”</li>
+                        <li>Upload a photo or video clearly showing today’s date (e.g., August 24, 2025)</li>
+                        <li>You’ll receive an email confirmation once your proof is securely stored off-chain</li>
+                    </ul>
+                </div>
+                <div class="tutorial-item">
+                    <h3>3. Managing Beneficiaries</h3>
+                    <ul>
+                        <li>Navigate to Vault Settings and select the vault you wish to edit</li>
+                        <li>Click “Edit Beneficiaries” to add, update, or remove next-of-kin wallet addresses</li>
+                        <li>Save your changes; they take effect immediately</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="whitepaper-modal" id="termsModal" role="dialog" aria-labelledby="termsTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="termsClose" aria-label="Close terms">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="termsTitle"><i class="fas fa-file-contract"></i> Terms of Service</h2>
+                <p>Last updated: August 2025</p>
+            </div>
+            <div class="whitepaper-body">
+                <div class="terms-item">
+                    <h3>1. Acceptance of Terms</h3>
+                    <p>By accessing or using TikStake, you agree to comply with these Terms of Service and all applicable laws. If you do not agree, please discontinue use of our platform.</p>
+                </div>
+                <div class="terms-item">
+                    <h3>2. Eligibility</h3>
+                    <p>You must be at least 18 years old and legally capable of entering binding agreements. You represent that your use of TikStake does not violate any local regulations.</p>
+                </div>
+                <div class="terms-item">
+                    <h3>3. Account Registration</h3>
+                    <p>You agree to provide accurate, current, and complete information during registration. You are responsible for safeguarding your login credentials and all activities under your account.</p>
+                </div>
+                <div class="terms-item">
+                    <h3>4. Vault Service</h3>
+                    <p>TikStake provides on-chain locking and off-chain proof storage. We do not hold private keys; all assets remain in smart contracts deployed on public blockchains.</p>
+                </div>
+                <div class="terms-item">
+                    <h3>5. Fees and Payments</h3>
+                    <p>Vault creation and proof submissions incur fees denominated in the blockchain’s native token. Fees are deducted at transaction confirmation and are non-refundable once the vault is locked.</p>
+                </div>
+                <div class="terms-item">
+                    <h3>6. User Responsibilities</h3>
+                    <p>You retain full responsibility for managing proofs, maintaining wallet security, and updating beneficiary information. TikStake is not liable for lost keys, incorrect uploads, or missed deadlines.</p>
+                </div>
+                <div class="terms-item">
+                    <h3>7. Disclaimers and Limitation of Liability</h3>
+                    <p>All services are provided “as is.” TikStake disclaims warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event will TikStake be liable for indirect, incidental, or consequential damages.</p>
+                </div>
+                <div class="terms-item">
+                    <h3>8. Termination</h3>
+                    <p>We may suspend or terminate your access immediately for breaches of these Terms. Upon termination, all vaults remain bound by original lock schedules and proofs.</p>
+                </div>
+                <div class="terms-item">
+                    <h3>9. Changes to Terms</h3>
+                    <p>We reserve the right to modify these Terms at any time. Material changes will be communicated via email, and continued use of the platform signifies acceptance.</p>
+                </div>
+                <div class="terms-item">
+                    <h3>10. Governing Law</h3>
+                    <p>These Terms are governed by the laws of the Republic of Uganda, without regard to conflict-of-law principles.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="whitepaper-modal" id="privacyModal" role="dialog" aria-labelledby="privacyTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="privacyClose" aria-label="Close privacy">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="privacyTitle"><i class="fas fa-shield-alt"></i> Privacy Policy</h2>
+                <p>Last updated: August 2025</p>
+            </div>
+            <div class="whitepaper-body">
+                <div class="privacy-item">
+                    <h3>1. Information We Collect</h3>
+                    <ul>
+                        <li>Account Data: name, email, wallet addresses</li>
+                        <li>Proof Uploads: images or videos with timestamps</li>
+                        <li>Usage Data: pages visited, IP address, browser type</li>
+                    </ul>
+                </div>
+                <div class="privacy-item">
+                    <h3>2. How We Use Your Data</h3>
+                    <ul>
+                        <li>To verify proof submissions and manage vaults</li>
+                        <li>To send notifications, updates, and support responses</li>
+                        <li>To analyze platform usage and improve features</li>
+                    </ul>
+                </div>
+                <div class="privacy-item">
+                    <h3>3. Data Sharing</h3>
+                    <p>We do not sell or rent personal data. We may share information with:</p>
+                    <ul>
+                        <li>Legal authorities when required by law</li>
+                        <li>Service providers under NDA for hosting and analytics</li>
+                    </ul>
+                </div>
+                <div class="privacy-item">
+                    <h3>4. Data Retention</h3>
+                    <p>Proof uploads and account records are retained until the vault’s final activation or user-initiated deletion. Anonymized usage logs are stored for up to two years for analysis.</p>
+                </div>
+                <div class="privacy-item">
+                    <h3>5. Your Rights</h3>
+                    <p>You may request access, correction, or deletion of your personal data by contacting <a href="mailto:privacy@tikstake.io">privacy@tikstake.io</a>. We will respond within 30 days.</p>
+                </div>
+                <div class="privacy-item">
+                    <h3>6. Security Measures</h3>
+                    <p>We employ industry-standard encryption for data in transit and at rest. Access controls and regular audits help safeguard your information.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Policy Modal -->
+    <div class="whitepaper-modal" id="cookiesModal" role="dialog" aria-labelledby="cookiesTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="cookiesClose" aria-label="Close cookies">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="cookiesTitle"><i class="fas fa-cookie-bite"></i> Cookie Policy</h2>
+                <p>Last updated: August 2025</p>
+            </div>
+            <div class="whitepaper-body">
+                <div class="cookie-item">
+                    <h3>1. What Are Cookies?</h3>
+                    <p>Cookies are small text files placed on your device to collect standard internet log information and visitor behavior.</p>
+                </div>
+                <div class="cookie-item">
+                    <h3>2. Types of Cookies We Use</h3>
+                    <ul>
+                        <li>Essential Cookies: enable core functionality like login sessions</li>
+                        <li>Performance Cookies: aggregate analytics on page visits and interactions</li>
+                        <li>Functional Cookies: remember preferences such as language settings</li>
+                    </ul>
+                </div>
+                <div class="cookie-item">
+                    <h3>3. Managing Cookies</h3>
+                    <p>Most browsers allow you to block or delete cookies via settings. Please note that disabling essential cookies may affect site functionality.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compliance Modal -->
+    <div class="whitepaper-modal" id="complianceModal" role="dialog" aria-labelledby="complianceTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="complianceClose" aria-label="Close compliance">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="complianceTitle"><i class="fas fa-balance-scale"></i> Compliance</h2>
+                <p>Our commitment to regulatory standards.</p>
+            </div>
+            <div class="whitepaper-body">
+                <p>TikStake is committed to regulatory compliance and best practices for crypto asset services:</p>
+                <ul>
+                    <li>Know Your Customer (KYC) checks on all next-of-kin activations</li>
+                    <li>Anti-Money Laundering (AML) screening on deposits above set thresholds</li>
+                    <li>Regular third-party security audits of smart contracts</li>
+                    <li>Adherence to the Data Protection Act of Uganda and GDPR principles where applicable</li>
+                </ul>
+                <p>Questions about compliance? Reach out to <a href="mailto:compliance@tikstake.io">compliance@tikstake.io</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Modal -->
+    <div class="whitepaper-modal" id="howItWorksModal" role="dialog" aria-labelledby="howItWorksTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="howItWorksClose" aria-label="Close how it works">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="howItWorksTitle"><i class="fas fa-cogs"></i> How It Works</h2>
+                <p>Learn how TikStake secures your crypto assets.</p>
+            </div>
+            <div class="whitepaper-body">
+                <div class="how-it-works-item">
+                    <h3>1. Select and Lock Assets</h3>
+                    <p>Choose your cryptocurrency and specify the amount to lock. Select a lock duration from 6 months to 20 years.</p>
+                </div>
+                <div class="how-it-works-item">
+                    <h3>2. Generate Wallet</h3>
+                    <p>Generate a unique wallet address for secure deposits. Send your assets to this address to initiate the lock.</p>
+                </div>
+                <div class="how-it-works-item">
+                    <h3>3. Submit Proof of Life</h3>
+                    <p>Periodically submit proof-of-life (e.g., a timestamped photo) to maintain control over your locked assets.</p>
+                </div>
+                <div class="how-it-works-item">
+                    <h3>4. Beneficiary Access</h3>
+                    <p>Designate next-of-kin beneficiaries who can access assets if you miss proof deadlines or upon lock expiration.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Supported Assets Modal -->
+    <div class="whitepaper-modal" id="supportedAssetsModal" role="dialog" aria-labelledby="supportedAssetsTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="supportedAssetsClose" aria-label="Close supported assets">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="supportedAssetsTitle"><i class="fas fa-coins"></i> Supported Assets</h2>
+                <p>Cryptocurrencies available for locking on TikStake.</p>
+            </div>
+            <div class="whitepaper-body">
+                <p>TikStake supports a variety of major cryptocurrencies and tokens, including:</p>
+                <ul>
+                    <li><strong>Bitcoin (BTC)</strong>: The original cryptocurrency with widespread adoption.</li>
+                    <li><strong>Ethereum (ETH)</strong>: Leading smart contract platform with a vibrant ecosystem.</li>
+                    <li><strong>Solana (SOL)</strong>: High-performance blockchain with fast transactions.</li>
+                    <li><strong>BNB</strong>: Powers the BNB Chain ecosystem with various utilities.</li>
+                    <li><strong>Cardano (ADA)</strong>: Research-driven blockchain focused on security.</li>
+                    <li><strong>Polkadot (DOT)</strong>: Multi-chain platform for blockchain interoperability.</li>
+                    <li><strong>Stablecoins</strong>: USDC, USDT, and other ERC-20/BEP-20 tokens on supported chains.</li>
+                </ul>
+                <p>We continuously expand our registry to include more assets based on user demand.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Modal -->
+    <div class="whitepaper-modal" id="securityModal" role="dialog" aria-labelledby="securityTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="securityClose" aria-label="Close security">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="securityTitle"><i class="fas fa-shield-alt"></i> Security</h2>
+                <p>Our commitment to protecting your assets.</p>
+            </div>
+            <div class="whitepaper-body">
+                <p>TikStake employs industry-leading security measures to ensure your assets are safe:</p>
+                <ul>
+                    <li><strong>Multi-Signature Cold Storage</strong>: Assets are stored in cold wallets requiring multiple signatures for access.</li>
+                    <li><strong>Military-Grade Encryption</strong>: All sensitive data, including proof uploads, is encrypted in transit and at rest.</li>
+                    <li><strong>Manual Withdrawal Reviews</strong>: Every withdrawal request undergoes rigorous verification to prevent unauthorized access.</li>
+                    <li><strong>Regular Audits</strong>: Third-party security audits of our smart contracts and infrastructure are conducted regularly.</li>
+                </ul>
+                <p>Your assets are protected by a combination of on-chain and off-chain security protocols.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Modal -->
+    <div class="whitepaper-modal" id="pricingModal" role="dialog" aria-labelledby="pricingTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="pricingClose" aria-label="Close pricing">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="pricingTitle"><i class="fas fa-hand-holding-usd"></i> Pricing</h2>
+                <p>Transparent fees for locking your assets.</p>
+            </div>
+            <div class="whitepaper-body">
+                <p>TikStake charges a one-time fee based on the USD value of locked assets, payable in the native cryptocurrency:</p>
+                <ul>
+                    <li><strong>0.2%</strong> for assets valued $0–$1,000</li>
+                    <li><strong>0.1%</strong> for assets valued $1,001–$100,000</li>
+                    <li><strong>0.005%</strong> for assets valued $100,001–$1,000,000</li>
+                    <li><strong>0.001%</strong> for assets valued over $1,000,000</li>
+                </ul>
+                <p>Fees are deducted at the time of vault creation. No additional charges apply for proof submissions or beneficiary updates.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="whitepaper-modal" id="contactModal" role="dialog" aria-labelledby="contactTitle" aria-hidden="true">
+        <div class="whitepaper-content">
+            <button class="whitepaper-close" id="contactClose" aria-label="Close contact">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="whitepaper-header">
+                <h2 id="contactTitle"><i class="fas fa-envelope"></i> Contact Us</h2>
+                <p>Reach out to our team for support or inquiries.</p>
+            </div>
+            <div class="whitepaper-body">
+                <form id="contactFormData">
+                    <div class="form-group">
+                        <label for="contactName">Name</label>
+                        <input type="text" id="contactName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address</label>
+                        <input type="email" id="contactEmail" placeholder="Enter your email" required>
+                        <div class="form-error" id="contactEmailError">Please enter a valid email</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" placeholder="Your message" required rows="5"></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn-cancel">Cancel</button>
+                        <button type="submit" class="btn-submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Our Social Links</h4>
+                    <p>A secure platform for locking crypto assets to build long-term wealth.</p>
+                    <div class="social-links">
+                        <a href="https://x.com/tikstake" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://t.me/+lwmvagAhHB0xMDdk" aria-label="Telegram" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="#" id="howItWorksLink">How It Works</a></li>
+                        <li><a href="#" id="supportedAssetsLink">Supported Assets</a></li>
+                        <li><a href="#" id="securityLink">Security</a></li>
+                        <li><a href="#" id="pricingLink">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#" id="whitepaperLinkFooter">White Paper</a></li>
+                        <li><a href="#" id="blogLink">Blog</a></li>
+                        <li><a href="#" id="faqLinkFooter">FAQ</a></li>
+                        <li><a href="#" id="tutorialsLink">Tutorials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#" id="termsLink">Terms of Service</a></li>
+                        <li><a href="#" id="privacyLink">Privacy Policy</a></li>
+                        <li><a href="#" id="cookiesLink">Cookie Policy</a></li>
+                        <li><a href="#" id="complianceLink">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 TikStake. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
